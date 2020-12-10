@@ -33,14 +33,16 @@ const SingleProduct = ({ product, onStarClick, star}) => {
   let { user} = useSelector((state) => ({ ...state }));
 
   useEffect(()=>{
-    if (user && user.wishlist.length>0){
-      if (user.wishlist.includes(product._id)){
+    if (user){
+
+      if (user.wishlist.length>0){
+        if (user.wishlist.includes(product._id)){
     
-        setIswishlist(true)
-      }else{
-        //console.log("not in wishlist")
+          setIswishlist(true)
+        }
       }
-    }
+      }
+     
   })
 
 
