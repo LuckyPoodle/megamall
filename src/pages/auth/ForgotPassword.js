@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { auth } from "../../firebase";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 
 const ForgotPassword = ({ history }) => {
@@ -28,11 +28,12 @@ const ForgotPassword = ({ history }) => {
       .then(() => {
         setEmail("");
         setLoading(false);
-        toast.success("Check your email for password reset link");
+        //toast.success("Check your email for password reset link");
+        alert("Check your email for password reset link")
       })
       .catch((error) => {
         setLoading(false);
-        toast.error(error.message);
+        alert("Something went wrong, please contact customer service")
      
       });
   };

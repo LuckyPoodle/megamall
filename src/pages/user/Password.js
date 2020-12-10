@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import UserNav from "../../components/nav/UserNav";
 import { auth,EmailAuthProvider } from "../../firebase";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import firebase from "firebase";
 const Password = () => {
   const [password, setPassword] = useState("");
@@ -35,13 +35,13 @@ const Password = () => {
       .then(() => {
         setLoading(false);
         setPassword("");
-        toast.success("Password updated");
+        alert("Password updated");
       })
       .catch((err) => {
         setLoading(false);
-        toast.error(err.message);
+        alert('Password not updated')
       })
-    .catch((err)=> toast.error(err.message));
+    .catch((err)=> alert(err.message));
  
 
     }

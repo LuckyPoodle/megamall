@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import AdminNav from "../../../components/nav/AdminNav";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import {getProduct, updateProduct} from "../../../functions/product";
-import ProductCreateForm from "../../../components/forms/ProductCreateForm";
+
 import { getCategories, getCategorySubs } from "../../../functions/category";
 
 import FileUpload from "../../../components/forms/FileUpload";
@@ -53,13 +53,14 @@ const ProductUpdate = ({ match ,history}) => {
     updateProduct(slug, values, user.token)
       .then((res) => {
         setLoading(false);
-        toast.success(`"${res.data.title}" is updated`);
+        //toast.success(`"${res.data.title}" is updated`);
         history.push("/admin/products");
       })
       .catch((err) => {
       
         setLoading(false);
-        toast.error(err.response.data.err);
+        alert('Something went wrong, please contact customer service')
+        //toast.error(err.response.data.err);
       });
   };
   const handleChange = (e) => {

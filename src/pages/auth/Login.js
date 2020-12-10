@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { auth, googleAuthProvider  } from "../../firebase";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { Button } from "antd";
 import { MailOutlined ,GoogleOutlined} from "@ant-design/icons";
 import { useDispatch } from "react-redux";
@@ -84,7 +84,7 @@ const Login = ({history}) => {
    // history.push("/");
   } catch (error) {
     
-    toast.error(error.message);
+    alert("Something went wrong, please contact customer service")
     setLoading(false);
   }
   };
@@ -115,7 +115,7 @@ const Login = ({history}) => {
       })
       .catch((err) => {
        
-        toast.error(err.message);
+        alert("Something went wrong, please contact customer service")
       });
   };
 

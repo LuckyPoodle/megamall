@@ -8,7 +8,7 @@ import { DollarOutlined, CheckOutlined } from "@ant-design/icons";
 import defaultImage from "../assets/defaultimage.png"
 import { createOrder, emptyUserCart } from "../functions/user";
 
-const StripeCheckout = ({ history }) => {
+const StripeCheckout = ( ) => {
   const dispatch = useDispatch();
 
 

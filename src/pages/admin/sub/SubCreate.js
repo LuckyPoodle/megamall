@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AdminNav from "../../../components/nav/AdminNav";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { getCategories } from "../../../functions/category";
 import { createSub, getSub, removeSub, getSubs } from "../../../functions/sub";
@@ -45,13 +45,13 @@ const SubCreate = () => {
         // console.log(res)
         setLoading(false);
         setName("");
-        toast.success(`"${res.data.name}" is created`);
+        //toast.success(`"${res.data.name}" is created`);
         loadSubs();
       })
       .catch((err) => {
       
         setLoading(false);
-        if (err.response.status === 400) toast.error(err.response.data);
+        if (err.response.status === 400) alert(err.response.data);
       });
   };
 
@@ -63,13 +63,13 @@ const SubCreate = () => {
       removeSub(slug, user.token)
         .then((res) => {
           setLoading(false);
-          toast.error(`${res.data.name} deleted`);
+          //toast.error(`${res.data.name} deleted`);
           loadSubs();
         })
         .catch((err) => {
           if (err.response.status === 400) {
             setLoading(false);
-            toast.error(err.response.data);
+            alert(err.response.data)
           }
         });
     }

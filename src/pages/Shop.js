@@ -4,11 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import ProductCard from "../components/cards/ProductCard";
 import { getSubs } from "../functions/sub";
 import { getCategories } from "../functions/category";
-import { getProductsByCount, getProducts, getProductsCount, fetchProductsByFilter } from "../functions/product"
+import {  getProducts, getProductsCount, fetchProductsByFilter } from "../functions/product"
 
 import { Menu, Slider, Pagination, Checkbox, Radio } from "antd";
 import { DollarOutlined, DownSquareOutlined, StarOutlined } from "@ant-design/icons";
-import Search from "antd/lib/input/Search";
+
 import Star from "../components/forms/Star";
 const { SubMenu, ItemGroup } = Menu;
 

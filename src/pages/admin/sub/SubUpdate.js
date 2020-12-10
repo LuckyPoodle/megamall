@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AdminNav from "../../../components/nav/AdminNav";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { getCategories } from "../../../functions/category";
 import { updateSub, getSub } from "../../../functions/sub";
@@ -39,13 +39,13 @@ const SubUpdate = ({ match, history }) => {
         // console.log(res)
         setLoading(false);
         setName("");
-        toast.success(`"${res.data.name}" is updated`);
+        //toast.success(`"${res.data.name}" is updated`);
         history.push("/admin/sub");
       })
       .catch((err) => {
        
         setLoading(false);
-        if (err.response.status === 400) toast.error(err.response.data);
+        if (err.response.status === 400) alert(err.response.data);
       });
   };
 

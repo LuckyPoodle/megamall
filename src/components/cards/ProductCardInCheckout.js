@@ -10,12 +10,11 @@ import {
 } from "@ant-design/icons";
 
 const ProductCardInCheckout = ({ p }) => {
-  const colors = ["Black", "Brown", "Silver", "White", "Blue"];
+  const colors = ["Black", "Brown", "Silver", "White", "Blue","Red","Gold","Light Blue","N.A"];
   let dispatch = useDispatch();
 
   const handleColorChange = (e) => {
-    console.log("color changed", e.target.value);
-
+   
     let cart = [];
     if (typeof window !== "undefined") {
       if (localStorage.getItem("cart")) {
@@ -42,7 +41,8 @@ const ProductCardInCheckout = ({ p }) => {
     let count = e.target.value < 1 ? 1 : e.target.value;
 
     if (count > p.quantity) {
-      toast.error(`Max available quantity: ${p.quantity}`);
+      //toast.error(`Max available quantity: ${p.quantity}`);
+      alert('Exceeds quantity available')
       return;
     }
 

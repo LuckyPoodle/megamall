@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AdminNav from "../../../components/nav/AdminNav";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { createProduct } from "../../../functions/product";
 import ProductCreateForm  from '../../../components/forms/ProductCreateForm';
@@ -27,8 +27,8 @@ const initialState = {
   quantity: "",
   discountedprice:"",
   images: [],
-  colors:["Black", "Brown", "Silver", "White", "Blue","Red","Gold","Light Blue"],
-  brands: ["TrustyProducer", "TrustyProducer II", "TrustyProducer III", "TrustyProducer IV", "TrustyProducer"],
+  colors:["Black", "Brown", "Silver", "White", "Blue","Red","Gold","Light Blue","N.A"],
+  brands: ["TrustyProducer", "TrustyProducer II", "TrustyProducer III", "TrustyProducer IV"],
   color: "",
   brand: "",
 };
@@ -68,7 +68,7 @@ const ProductCreate = () => {
       .catch((err) => {
     
         //we received error sent via json 
-        if (err.response.status === 400) toast.error(err.response.data);
+        if (err.response.status === 400) alert(err.response.data);
       });
   };
 
@@ -119,7 +119,7 @@ const ProductCreate = () => {
          <div className="p-3">
             <FileUpload values={values} setValues={setValues} setLoading={setLoading}/>
           </div>
-          {JSON.stringify(values.images)}
+         
 
             <ProductCreateForm 
             handleSubmit={handleSubmit}

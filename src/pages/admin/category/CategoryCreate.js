@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AdminNav from "../../../components/nav/AdminNav";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { useSelector,useDispatch } from "react-redux";
 import {
   createCategory,
@@ -67,12 +67,13 @@ const CategoryCreate = () => {
           },
         });
 
-        toast.success(`"${res.data.name}" is created`);
+       // toast.success(`"${res.data.name}" is created`);
+       alert('Created category')
       })
       .catch((err) => {
        
         setLoading(false);
-        if (err.response.status === 400) toast.error(err.response.data);
+        if (err.response.status === 400) alert(err.response.data);
       });
   };
   const handleRemove = async (slug) => {
@@ -83,13 +84,15 @@ const CategoryCreate = () => {
       removeCategory(slug, user.token)
         .then((res) => {
           setLoading(false);
-          toast.error(`${res.data.name} deleted`);
+         // toast.error(`${res.data.name} deleted`);
+         alert('Deleted category')
           loadCategories();
         })
         .catch((err) => {
           if (err.response.status === 400) {
             setLoading(false);
-            toast.error(err.response.data);
+           // toast.error(err.response.data);
+           alert('Something went wrong, please contact customer service')
           }
         });
     }

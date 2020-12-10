@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AdminNav from "../../../components/nav/AdminNav";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { getCategory, updateCategory } from "../../../functions/category";
 
@@ -34,13 +34,14 @@ const CategoryUpdate = ({ history, match }) => {
         // console.log(res)
         setLoading(false);
         setName("");
-        toast.success(`"${res.data.name}" is updated`);
+        //toast.success(`"${res.data.name}" is updated`);
+        //alert('Updated category')
         history.push("/admin/category");
       })
       .catch((err) => {
       
         setLoading(false);
-        if (err.response.status === 400) toast.error(err.response.data);
+        if (err.response.status === 400) alert(err.response.data);
       });
   };
 

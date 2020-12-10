@@ -1,5 +1,5 @@
 import React from "react";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import Resizer from 'react-image-file-resizer';
 import axios from 'axios';
 import { Avatar,Badge } from "antd";
@@ -10,7 +10,7 @@ const FileUpload = ({values,setValues,setLoading}) => {
   const { user } = useSelector((state) => ({ ...state }));
 
   const fileUploadAndResize = (e) => {
-    console.log(e.target.files);
+
     // resize , using package react-image-file-resizer npmm 
     //multiple uploads
     let files=e.target.files;
@@ -37,7 +37,8 @@ const FileUpload = ({values,setValues,setLoading}) => {
           })
           .catch(err=>{
             setLoading(false);
-            toast.error("Cloudinary Upload Err",err);
+           // toast.error("Cloudinary Upload Err",err);
+           alert('Upload error')
        
           })
 
@@ -71,7 +72,7 @@ const FileUpload = ({values,setValues,setLoading}) => {
 
     }).catch((err)=>{
    
-      toast.error(err);
+      
       setLoading(false)
 
     })

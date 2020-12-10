@@ -5,7 +5,7 @@ import AdminProductCard from "../../../components/cards/AdminProductCard";
 import { removeProduct } from "../../../functions/product";
 
 import { useSelector } from "react-redux";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 
 
 
@@ -42,10 +42,10 @@ const AllProducts = () => {
       removeProduct(slug, user.token)
         .then((res) => {
           loadAllProducts();
-          toast.error(`${res.data.title} is deleted`);
+         // toast.error(`${res.data.title} is deleted`);
         })
         .catch((err) => {
-          if (err.response.status === 400) toast.error(err.response.data);
+          if (err.response.status === 400) alert(err.response.data);
           console.log(err);
         });
     }

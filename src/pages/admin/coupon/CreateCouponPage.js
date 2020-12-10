@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
+//import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import {
   getCoupons,
@@ -42,12 +42,12 @@ const CreateCouponPage = () => {
         setName("");
         setDiscount("");
         setExpiry("");
-        toast.success(`"${res.data.name}" is created`);
+        //toast.success(`"${res.data.name}" is created`);
       })
       .catch((err) =>{
         setLoading(false);
      
-        toast.error('Error creating coupon');
+       // toast.error('Error creating coupon');
       });
   
 
@@ -60,7 +60,7 @@ const CreateCouponPage = () => {
         .then((res) => {
           loadAllCoupons(); // load all coupons
           setLoading(false);
-          toast.error(`Coupon "${res.data.name}" deleted`);
+         // toast.error(`Coupon "${res.data.name}" deleted`);
         })
         .catch((err) => console.log(err));
     }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal} from "antd";
-import { toast } from "react-toastify";
+
 import { useSelector } from "react-redux";
 import { StarOutlined } from "@ant-design/icons";
 //so we can use history 
@@ -39,7 +39,7 @@ const RatingModal = ({ children }) => {
         visible={modalVisible}
         onOk={() => {
           setModalVisible(false);
-          toast.success("Thanks for your rating");
+          
         }}
         onCancel={() => setModalVisible(false)}
       >

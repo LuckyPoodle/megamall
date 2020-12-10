@@ -1,6 +1,6 @@
 import React, { lazy, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 import { getUserCart, emptyUserCart, saveUserAddress, applyCoupon,createCashOrderForUser } from "../functions/user";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -44,7 +44,8 @@ const Checkout = ({history}) => {
       setTotal(0);
       setDiscountError("");
       setTotalAfterDiscount("");
-      toast.success("Cart is empty. Continue shopping.");
+     // toast.success("Cart is empty. Continue shopping.");
+     alert('Cart is emptied, continue shopping')
     });
   };
 
@@ -53,7 +54,7 @@ const Checkout = ({history}) => {
     saveUserAddress(user.token, address).then((res) => {
       if (res.data.ok) {
         setAddressSaved(true);
-        toast.success("Address saved");
+       
       }
     });
   };

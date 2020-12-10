@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Tabs, Tooltip } from "antd";
 
-import { HeartOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { HeartOutlined, HeartFilled,ShoppingCartOutlined } from "@ant-design/icons";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import defaultImage from "../../assets/defaultimage.png"
@@ -10,7 +10,7 @@ import StarRating from "react-star-ratings";
 import RatingModal from '../modal/RatingModal';
 import { showAverage } from "../../functions/rating"
 import { addToWishlist,removeWishlist  } from "../../functions/user";
-import { toast } from "react-toastify";
+//import { toast } from "react-toastify";
 
 
 import _ from "lodash";
@@ -84,6 +84,12 @@ const SingleProduct = ({ product, onStarClick, star}) => {
 
   const handleAddToWishlist = (e) => {
     e.preventDefault();
+
+    if (!user){
+     
+      alert('Please login to add products to wishlist')
+      return;
+    }
     if (isWishlist){
       removeWishlist(product._id, user.token);
   
@@ -91,14 +97,16 @@ const SingleProduct = ({ product, onStarClick, star}) => {
         type: "REMOVE_WISHLIST",
         payload: product._id,
       });
-      toast.error("Removed from wishlist");
+      //toast.error("Removed from wishlist");
+      //alert('Removed from wishlist')
       setIswishlist(false)
 
     }else{
       addToWishlist(product._id, user.token).then((res) => {
-        console.log("ADDED TO WISHLIST", res.data);
+       
         setIswishlist(true)
-        toast.success("Added to wishlist");
+        //toast.success("Added to wishlist");
+        //alert('Added to wishlist')
         //history.push("/user/wishlist");
       });
       dispatch({
@@ -148,8 +156,8 @@ const SingleProduct = ({ product, onStarClick, star}) => {
               </a>
             </Tooltip>,
             <a onClick={handleAddToWishlist}>
-              <HeartOutlined className="text-info" /> <br />
-              {isWishlist ? "In Wishlist" : "Add to Wishlist"}
+             
+              {isWishlist ?<> <HeartFilled className="text-info" /> <br />In Wishlist</> : <> <HeartOutlined className="text-info" /> <br />Add to Wishlist</>}
 
             </a>,
             <RatingModal>

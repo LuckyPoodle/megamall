@@ -25,7 +25,8 @@ const Register = ({history}) => {
           handleCodeInApp:true
       }
       await auth.sendSignInLinkToEmail(email,config);
-      toast.success(`Email is sent to ${email}. Please confirm your registration via the link in the email!`);
+      toast.success(`Email is sent to ${email}. Please confirm your registration via the link in the email!`)
+      //alert(`Email is sent to ${email}. Please confirm your registration via the link in the email!`);
 
 
     //save user email in local storage
