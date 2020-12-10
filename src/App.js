@@ -1,7 +1,7 @@
 
 import React, { useEffect,lazy,Suspense } from "react";
 
-import { auth } from "./firebase";
+import { auth } from "./firebase.js";
 import { useDispatch } from "react-redux";
 import { currentUser } from "./functions/auth";
 import { LoadingOutlined } from "@ant-design/icons";
