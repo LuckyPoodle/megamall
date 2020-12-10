@@ -19,8 +19,8 @@ const initialState = {
   shipping: "",
   quantity: "",
   images: [],
-  colors: ["Black", "Brown", "Silver", "White", "Blue","Red","Gold","Light Blue"],
-  brands: ["TrustyProducer", "TrustyProducer II", "TrustyProducer III", "TrustyProducer IV", "TrustyProducer"],
+  colors:["Black", "Brown", "Silver", "White", "Blue","Red","Gold","Light Blue","N.A"],
+  brands: ["TrustyProducer", "TrustyProducer II", "TrustyProducer III", "TrustyProducer IV"],
   color: "",
   brand: "",
 };

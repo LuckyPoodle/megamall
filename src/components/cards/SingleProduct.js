@@ -10,7 +10,7 @@ import StarRating from "react-star-ratings";
 import RatingModal from '../modal/RatingModal';
 import { showAverage } from "../../functions/rating"
 import { addToWishlist,removeWishlist  } from "../../functions/user";
-//import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 
 import _ from "lodash";
@@ -33,12 +33,12 @@ const SingleProduct = ({ product, onStarClick, star}) => {
   let { user} = useSelector((state) => ({ ...state }));
 
   useEffect(()=>{
-    if (user){
+    if (user && user.wishlist.length>0){
       if (user.wishlist.includes(product._id)){
-        console.log("product is in wishlist")
+    
         setIswishlist(true)
       }else{
-        console.log("not in wishlist")
+        //console.log("not in wishlist")
       }
     }
   })
