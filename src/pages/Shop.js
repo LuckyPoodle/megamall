@@ -57,10 +57,10 @@ const Shop = () => {
 
   ////////OBTAIN WHAT IS IN REDUX STORE FOR SEARCH PARAMS
   let { search } = useSelector((state) => ({ ...state }));
-  console.log("search from selector", search);
+
   //for checkboxes of category
   if (search.category && search.category.length > 0) {
-    console.log("category from selector search__");
+  
     var selectedCheck = search.category.map(c => {
       return c.category
     })
@@ -109,7 +109,7 @@ const Shop = () => {
   }, [page, resetall]);
 
   useEffect(() => {
-    console.log("I AM HERE!!!!+++++++++++++");
+   
     
     getProductsCount().then((res) => {
       setProductsCount(res.data.length)
@@ -166,20 +166,20 @@ const Shop = () => {
       // alert("hav already selected categories")
       let currentSelected = search.currentselectedpdts;
       if (currentSelected.length===0){
-        console.log("temporary set products as empty array")
+     
         setProducts([])
       }else{
         setProducts(currentSelected.list);
-        console.log("currentSelected ",currentSelected.list)
+       // console.log("currentSelected ",currentSelected.list)
       }
-      console.log("---In LoadAllProducts----")
-      console.log("search.category",search.category);
-      console.log("search.price.price",search.price.price);
-      console.log("search.sub",search.sub);
-      console.log("reduxColor",reduxColor);
-      console.log("reduxShipping",reduxShipping);
-      console.log("reduxBrand",reduxBrand);
-      console.log("reduxStar",reduxStar)
+      // console.log("---In LoadAllProducts----")
+      // console.log("search.category",search.category);
+      // console.log("search.price.price",search.price.price);
+      // console.log("search.sub",search.sub);
+      // console.log("reduxColor",reduxColor);
+      // console.log("reduxShipping",reduxShipping);
+      // console.log("reduxBrand",reduxBrand);
+      // console.log("reduxStar",reduxStar)
       
       
 
@@ -196,8 +196,7 @@ const Shop = () => {
       // sort, order, PAGE is LIMIT of number of products of fetch to be computed further in backend
       getProducts("createdAt", "desc", page, 6).then((res) => {
 
-        console.log("useEffect -----NO SEARCH PARAMS------- loadAllproducts")
-        console.log(res.data)
+      
         setProducts(res.data);
 
         setLoading(false);
@@ -272,8 +271,7 @@ const Shop = () => {
     })
 
     if (reduxPrice && reduxPrice.length === 2) {
-      console.log("reduxPrice length ==2 , so......")
-    
+     
         fetchProducts({ reduxPrice, reduxCategories });
      
       
@@ -286,8 +284,7 @@ const Shop = () => {
 
   //delay api request by 300 miliseconds
   const handleSlider = (value) => {
-    console.log("handle Slider");
-    console.log(value);
+   
     //to remove search text if any
     dispatch({
       type: "SEARCH_QUERY",
@@ -315,12 +312,11 @@ const Shop = () => {
   };
 
   const checkIfNoneSelectedAfterSelectionPerformed = () => {
-    console.log("//////////////////checkIfNoneSelectedAfterSelectionPerformed///////////////////");
     if (search.price.price === undefined && categoryIds.length === 0 && reduxSub === "" && isSearching === true &&reduxBrand==="" &&reduxColor==="" &&reduxShipping==="") {
       var oppositeofresetbooleantotrigger = !resetall
       setResetall(oppositeofresetbooleantotrigger);
       setIsSearching(false)
-      console.log("NO SEARCH PARAMS SELECTED LEFT ----- TO TRIGGER NUMBER ONE USEEFFECT")
+     
 
     }
 
@@ -363,7 +359,7 @@ const Shop = () => {
     setCategoryIds([]);
   
 
-    console.log("NO SEARCH PARAMS TO BE SELECTED ----- TO TRIGGER NUMBER ONE USEEFFECT")
+    
     var oppositeofresetbooleantotrigger = !resetall;
   
 
@@ -412,7 +408,7 @@ const Shop = () => {
       //remove one item from index
       inTheState.splice(foundInTheState, 1);
       updateSearchParams('categoryremove', justChecked)
-      console.log("remove a check in a box");
+
       let reduxPrice = search.price;
 
       // let reduxCategories=search.category;
@@ -476,8 +472,7 @@ const Shop = () => {
   const handleSub = (sub) => {
     // console.log("SUB", sub);
     setSub(sub);
-    console.log("sub is_______")
-    console.log(sub);
+    
 
     resetParams();
 

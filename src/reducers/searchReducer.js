@@ -2,15 +2,14 @@ const addItemInList=(Items,ItemToAdd)=>{
   
 
   Items.push(ItemToAdd);
-  console.log("ITEMS NOW!!!!!!!!****************************");
-  console.log(Items);
+
   return Items
 
 
 }
 
 const removeItemInList=(Items,ItemtoRemove)=>{
-  console.log("in remove item in list")
+
 
   return Items.filter(item=>item.category!==ItemtoRemove.category)
 }
@@ -29,8 +28,7 @@ export const searchReducer = (state = INITIAL_STATE , action) => {
       return {...state,price:action.payload}
 
     case "STORE_SEARCH_CATEGORY":
-      console.log("STORE SEARCH CATEGORY action.payload");
-      console.log(action.payload)
+
       return {...state,category:addItemInList(state.category,action.payload)}
 
     case "REMOVE_SEARCH_CATEGORY":
@@ -47,10 +45,7 @@ export const searchReducer = (state = INITIAL_STATE , action) => {
   
 
     case "CLEAR_SEARCH_PARAMS":
-      console.log("in clear search params______________________________________");
-      console.log("in clear search params______________________________________");
-      console.log("in clear search params______________________________________");
-      console.log("in clear search params______________________________________");
+     
 
     return {...state, text: "",price:[],category:[],sub:"",currentselectedpdts:[],brand:"",color:"",shipping:"" ,star:""};
 

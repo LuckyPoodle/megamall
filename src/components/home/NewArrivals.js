@@ -21,7 +21,7 @@ const NewArrivals = () => {
   const loadAllProducts = () => {
     setLoading(true);
   getProducts("createdAt", "desc", page,3).then((res) => {
-    console.log("useEffect loadAllproducts")
+   
     setProducts(res.data);
     setLoading(false);
   
@@ -32,7 +32,7 @@ const NewArrivals = () => {
   }, [page]);
 
   useEffect(() => {
-    console.log("I AM HERE!!!!+++++++++++++");
+   
    
     getProductsCount().then((res) => setProductsCount(res.data.length));
 

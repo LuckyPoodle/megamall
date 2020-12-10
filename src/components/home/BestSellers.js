@@ -17,14 +17,14 @@ const BestSellers = () => {
       getProducts("sold", "desc", page,3).then((res) => {
         setProducts(res.data);
         setLoading(false);
-        console.log("in Best Seller's loadAllproducts")
+   
       });
     };
     loadAllProducts();
   }, [page]);
 
   useEffect(() => {
-    console.log("I AM HERE in BESTSELLER-------");
+    
     getProductsCount().then((res) => setProductsCount(res.data.length));
   }, []);
 

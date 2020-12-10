@@ -83,7 +83,7 @@ const Login = ({history}) => {
 
    // history.push("/");
   } catch (error) {
-    console.log(error);
+    
     toast.error(error.message);
     setLoading(false);
   }
@@ -114,7 +114,7 @@ const Login = ({history}) => {
         //history.push("/");
       })
       .catch((err) => {
-        console.log(err);
+       
         toast.error(err.message);
       });
   };

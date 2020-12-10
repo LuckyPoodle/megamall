@@ -28,8 +28,7 @@ const CategoryUpdate = ({ history, match }) => {
     e.preventDefault();
     // console.log(name);
     setLoading(true);
-    console.log("IN UPDATECATEGORY HANDLESUBMIT");
-    console.log(user.token)
+    
     updateCategory(match.params.slug, { name }, user.token)
       .then((res) => {
         // console.log(res)
@@ -39,7 +38,7 @@ const CategoryUpdate = ({ history, match }) => {
         history.push("/admin/category");
       })
       .catch((err) => {
-        console.log(err);
+      
         setLoading(false);
         if (err.response.status === 400) toast.error(err.response.data);
       });

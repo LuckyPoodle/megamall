@@ -20,10 +20,9 @@ const Checkout = ({history}) => {
   const couponTrueOrFalse = useSelector((state) => state.coupon);
   useEffect(() => {
     getUserCart(user.token).then((res) => {
-      console.log("user cart res", JSON.stringify(res.data, null, 4));
+   
       setProducts(res.data.products);
-      console.log("obtained products -------->");
-      console.log(products)
+   
       setTotal(res.data.cartTotal);
     });
   }, []);
@@ -61,7 +60,7 @@ const Checkout = ({history}) => {
 
   const showCartItemValues = (cartitem) => {
 
-    console.log("in showcartitemvalues...., cartitem , ", cartitem)
+ 
 
 
     if (cartitem.discountedprice) {
@@ -75,9 +74,9 @@ const Checkout = ({history}) => {
   }
 
   const applyDiscountCoupon = () => {
-    console.log("send coupon to backend", coupon);
+    
     applyCoupon(user.token, coupon).then((res) => {
-      console.log("RES ON COUPON APPLIED", res.data);
+
       if (res.data) {
         setTotalAfterDiscount(res.data);
         // update redux coupon applied true/false

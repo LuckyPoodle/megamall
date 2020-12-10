@@ -24,10 +24,10 @@ const Cart = ({ history }) => {
     // console.log("cart", JSON.stringify(cart, null, 4));
     userCart(cart, user.token)
       .then((res) => {
-        console.log("CART POST RES", res);
+       
         if (res.data.ok) history.push("/checkout");
       })
-      .catch((err) => console.log("cart save err", err));
+      .catch((err) =>console.log("something went wrong") );
   };
 
   
@@ -39,10 +39,10 @@ const Cart = ({ history }) => {
     });
     userCart(cart, user.token)
       .then((res) => {
-        console.log("CART POST RES", res);
+      
         if (res.data.ok) history.push("/checkout");
       })
-      .catch((err) => console.log("cart save err", err));
+      .catch((err) => console.log("cart save err"));
   };
 
 

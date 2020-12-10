@@ -32,15 +32,13 @@ const SubCreate = () => {
   const loadSubs = () => getSubs()
   .then((s) => {
     setSubs(s.data);
-    console.log("LOAD SUBS");
-    console.log(subs);
+   
   
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("HANDLESUBMIT CATEGORY")
-    console.log(category);
+
     setLoading(true);
     createSub({ name, parent: category,parentCategoryName:categoryName }, user.token)
       .then((res) => {
@@ -51,7 +49,7 @@ const SubCreate = () => {
         loadSubs();
       })
       .catch((err) => {
-        console.log(err);
+      
         setLoading(false);
         if (err.response.status === 400) toast.error(err.response.data);
       });

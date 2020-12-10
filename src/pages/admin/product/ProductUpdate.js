@@ -57,7 +57,7 @@ const ProductUpdate = ({ match ,history}) => {
         history.push("/admin/products");
       })
       .catch((err) => {
-        console.log(err);
+      
         setLoading(false);
         toast.error(err.response.data.err);
       });
@@ -69,13 +69,13 @@ const ProductUpdate = ({ match ,history}) => {
 
   const loadCategories = () =>
   getCategories().then((c) => {
-    console.log("GET CATEGORIES IN UPDATE PRODUCT", c.data);
+
     setCategories(c.data);
   });
 
   const handleCategoryChange = (e) => {
     e.preventDefault();
-    console.log("CLICKED CATEGORY", e.target.value);
+    
     setValues({ ...values, subs: [] });
     //we set the new category here first instead of adjusting values first, so we can compare with original value
     setSelectedCategory(e.target.value)
@@ -83,17 +83,16 @@ const ProductUpdate = ({ match ,history}) => {
 
 
     getCategorySubs(e.target.value).then((res) => {
-      console.log("SUB OPTIONS ON CATGORY CLICK", res);
+      
       setSubOptions(res.data);
     });
 
-    console.log("Existing category values.category",values.category._id);
-    console.log("e.target.value",e.target.value)
+
 
 //to sync subs also change when category change - make it empty now, 
 //but if go back original one, repopulate existing subs
 if(values.category._id===e.target.value){
-  console.log("SAME")
+
   loadProduct();
 }
 setArrayOfSubs([]);
@@ -113,7 +112,7 @@ setArrayOfSubs([]);
       p.data.subs.map((s) => {
         arr.push(s._id);
       });
-      console.log("ARR", arr);
+      
       setArrayOfSubs((prev) => arr); // required for ant design select to work
     });
   };

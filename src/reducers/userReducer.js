@@ -1,6 +1,6 @@
 
 const removeItemInList=(Items,ItemtoRemove)=>{
-  console.log("in remove item in list")
+  
 
   return Items.filter(item=>item.category!==ItemtoRemove.category)
 }
@@ -8,8 +8,7 @@ const addItemInList=(Items,ItemToAdd)=>{
   
 
   Items.push(ItemToAdd);
-  console.log("ITEMS NOW!!!!!!!!****************************");
-  console.log(Items);
+
   return Items
 
 

@@ -18,8 +18,7 @@ const Password = () => {
       auth.currentUser.email,
       currentpassword
     );
-    console.log("handlesubmitt...");
-    console.log(credential);
+   
     await user.reauthenticateWithCredential(credential).catch(err=>{
       valid=false;
       setLoading(false);
@@ -29,7 +28,7 @@ const Password = () => {
       return alert(err);
     });
     if( valid){
-      console.log("REAUTHEN");
+      
       
       await auth.currentUser
       .updatePassword(password)

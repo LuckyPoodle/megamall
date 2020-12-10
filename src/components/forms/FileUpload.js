@@ -30,7 +30,7 @@ const FileUpload = ({values,setValues,setLoading}) => {
             }
           })
           .then(res=>{
-            console.log('IMAGE UPLOAD RES DATA',res);
+        
             setLoading(false);
             allUploadedFiles.push(res.data);
             setValues({...values,images:allUploadedFiles});
@@ -38,7 +38,7 @@ const FileUpload = ({values,setValues,setLoading}) => {
           .catch(err=>{
             setLoading(false);
             toast.error("Cloudinary Upload Err",err);
-            console.log("Cloudinary Upload Err",err)
+       
           })
 
         },"base64")
@@ -54,7 +54,7 @@ const FileUpload = ({values,setValues,setLoading}) => {
   //note the handleImageRemove, use arrow function as u passing arg
   const handleImageRemove=(public_id)=>{
     setLoading(true);
-    console.log("remove image",public_id);
+  
     axios.post(`${process.env.REACT_APP_API}/removeimage`,{public_id},{
       headers:{
         authtoken:user?user.token:""

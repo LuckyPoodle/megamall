@@ -32,8 +32,7 @@ const CategoryCreate = () => {
     loadCategories();
     getCategories()
     .then((res) => {
-      console.log("----------------categories get!!!!!----------------------");
-      console.log(res.data)
+     
       //we are putting the categories we obtained from backend into redux store here
       dispatch({
         type: "FETCH_CATEGORIES",
@@ -56,8 +55,7 @@ const CategoryCreate = () => {
     setLoading(true);
     createCategory({ name }, user.token)
       .then((res) => {
-        console.log("IN CREATE CATEGORY")
-        console.log(res.data)
+       
         setLoading(false);
         setName("");
         categories.unshift(res.data)
@@ -72,7 +70,7 @@ const CategoryCreate = () => {
         toast.success(`"${res.data.name}" is created`);
       })
       .catch((err) => {
-        console.log(err);
+       
         setLoading(false);
         if (err.response.status === 400) toast.error(err.response.data);
       });

@@ -18,8 +18,7 @@ const Register = ({history}) => {
     const handleSubmit = async (e) => {
       e.preventDefault()
 
-      console.log("REGISTER>>>>>>>>>>>>>>>>>>");
-      console.log(process.env.REACT_APP_REGISTER_REDIRECT_URL);
+      
       //handle EMAIL ACTION
       const config={
           url:process.env.REACT_APP_REGISTER_REDIRECT_URL,

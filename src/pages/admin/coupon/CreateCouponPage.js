@@ -36,7 +36,7 @@ const CreateCouponPage = () => {
     
       createCoupon({ name, expiry, discount }, user.token)
       .then((res) => {
-        console.log("createCoupon-----",res)
+       
         setLoading(false);
         loadAllCoupons(); // load all coupons
         setName("");
@@ -46,8 +46,7 @@ const CreateCouponPage = () => {
       })
       .catch((err) =>{
         setLoading(false);
-        console.log("ERROR....");
-        console.log(err)
+     
         toast.error('Error creating coupon');
       });
   

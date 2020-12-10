@@ -58,8 +58,7 @@ const ProductCreate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("in HANDLE SUBMIT");
-    console.log(values)
+
     createProduct(values, user.token)
       .then((res) => {
         console.log(res);
@@ -67,7 +66,7 @@ const ProductCreate = () => {
         window.location.reload();
       })
       .catch((err) => {
-        console.log(err);
+    
         //we received error sent via json 
         if (err.response.status === 400) toast.error(err.response.data);
       });
@@ -75,7 +74,7 @@ const ProductCreate = () => {
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-    console.log(e.target.name, " ----- ", e.target.value);
+  
   };
 
 
@@ -94,11 +93,11 @@ const ProductCreate = () => {
     // }
 
     e.preventDefault();
-    console.log("CLICKED CATEGORY", e.target.value);
+   
     //subs:[] because we want to remove previous values in subs when you choose another category
     setValues({ ...values, subs:[], category: e.target.value });
     getCategorySubs(e.target.value).then((res) => {
-      console.log("SUB OPTIONS ON CATGORY CLICK", res);
+    
       setSubOptions(res.data);
     });
 

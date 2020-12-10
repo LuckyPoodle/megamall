@@ -51,7 +51,7 @@ const RegisterComplete = ({history}) => {
         //to get the currently logged in user's token
         const idTokenResult = await user.getIdTokenResult();
         // redux store - dispatch the currently logged in user to redux store
-        console.log("user", user, "idTokenResult", idTokenResult);
+     
 
 
 
@@ -74,7 +74,7 @@ const RegisterComplete = ({history}) => {
         history.push("/");
       }
     } catch (error) {
-      console.log(error);
+
       toast.error(error.message);
     }
   };

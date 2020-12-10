@@ -19,9 +19,9 @@ const Product = ({ match }) => {
 
   useEffect(() => {
     const loadSingleProduct = () => {
-      console.log("loadSingleProduct_________________________")
+    
       getProduct(slug).then((res) => {
-        console.log("getProduct.....res is",res)
+       
         setProduct(res.data);
         // load related
         getRelated(res.data._id).then((res) => setRelated(res.data));
@@ -31,7 +31,7 @@ const Product = ({ match }) => {
   }, [slug,update]);
 
   useEffect(()=>{
-    console.log("in Product.js , useEffect")
+ 
     if (product.ratings && user){
       let existingRatingObject = product.ratings.find(
         (ele) => ele.postedBy.toString() === user._id.toString()
@@ -43,14 +43,13 @@ const Product = ({ match }) => {
 
   const onStarClick=(newRating,name)=>{
     setClickonleaverating(!clickonleaverating);
-    console.log("ON STAR CLICK")
-    console.table(newRating,name);
+ 
     setStar(newRating);
-    console.log(star)
+
 
     productStar(name,newRating,user.token)
     .then(res=>{
-      console.log('rating!!',res.data);
+      
 //loadSingleProduct(); //if want to show updated rating in real-time
       setUpdate(!update)
     })
