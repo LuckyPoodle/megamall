@@ -105,6 +105,7 @@ const Login = ({history}) => {
                 token: idTokenResult.token,
                 role: res.data.role,
                 _id: res.data._id,
+                wishlist:res.data.wishlist
               },
             });
               //redirect according to role after we got back res

@@ -35,7 +35,7 @@ const SingleProduct = ({ product, onStarClick, star}) => {
   useEffect(()=>{
     if (user){
 
-      if (user.wishlist.length>0){
+      if (user.wishlist){
         if (user.wishlist.includes(product._id)){
     
           setIswishlist(true)
