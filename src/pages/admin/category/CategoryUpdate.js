@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AdminNav from "../../../components/nav/AdminNav";
-//import { toast } from "react-toastify";
+
 import { useSelector } from "react-redux";
 import { getCategory, updateCategory } from "../../../functions/category";
 
@@ -8,7 +8,7 @@ import { getCategory, updateCategory } from "../../../functions/category";
 //reuse code
 import CategoryForm from "../../../components/forms/CategoryForm";
 
-//we can use router props to get slug, dunnid use useParams from react-router-dom
+//use router props to get slug
 const CategoryUpdate = ({ history, match }) => {
   const { user } = useSelector((state) => ({ ...state }));
 

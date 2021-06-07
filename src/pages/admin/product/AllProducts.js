@@ -14,7 +14,7 @@ const AllProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // redux
+  
   const { user } = useSelector((state) => ({ ...state }));
 
 

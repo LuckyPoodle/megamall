@@ -4,7 +4,7 @@ import {toast,ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 import { useDispatch, useSelector } from "react-redux";
 import { createOrUpdateUser } from "../../functions/auth";
-//we have props history from react router
+//props history from react router
 const RegisterComplete = ({history}) => {
 
     const [email, setEmail] = useState("");
@@ -13,7 +13,7 @@ const RegisterComplete = ({history}) => {
     const { user } = useSelector((state) => ({ ...state }));
     let dispatch = useDispatch();
 
-//when component mount or when somethig is changed in the dependency(2nd arg)
+
     useEffect(()=>{
        
     setEmail(window.localStorage.getItem("emailForRegistration"));
@@ -40,7 +40,7 @@ const RegisterComplete = ({history}) => {
         window.location.href
       );
       //   console.log("RESULT", result);
-      //emailVerified is a value in the const result we obtain
+      //emailVerified is a value in the const result
       if (result.user.emailVerified) {
         // remove user email fom local storage
         window.localStorage.removeItem("emailForRegistration");

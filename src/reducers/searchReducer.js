@@ -21,7 +21,6 @@ const INITIAL_STATE={ text: "",price:[],category:[],sub:"",currentselectedpdts:[
 export const searchReducer = (state = INITIAL_STATE , action) => {
   switch (action.type) {
     case "SEARCH_QUERY":
-      //if we have more than 1 property in state, ...action.payload useful
       return { ...state, ...action.payload };
     case "STORE_SEARCH_PRICE":
 

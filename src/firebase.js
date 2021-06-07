@@ -7,7 +7,7 @@ import 'firebase/auth';
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyB6AZbfQavZ5MK9rLz1nV1oUx00I77BugQ",
+    apiKey: process.env.FIREBASE_API,
     authDomain: "megamall-react.firebaseapp.com",
     databaseURL: "https://megamall-react.firebaseio.com",
     projectId: "megamall-react",

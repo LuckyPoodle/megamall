@@ -7,8 +7,8 @@ const ForgotPassword = ({ history }) => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
-  //we want to redirect logged in user from this page
-  //user as dependency as may take a few seconds for us to get user
+  //redirect logged in user from this page
+  //user as dependency as may take a few seconds to get user
   const {user} =useSelector((state)=>({...state}));
   useEffect(()=>{
     if (user && user.token) history.push('/')

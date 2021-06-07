@@ -55,7 +55,7 @@ const StripeCheckout = ( ) => {
       setError(`Payment failed ${payload.error.message}`);
       setProcessing(false);
     } else {
-      // here you get result after successful payment
+      // here get result after successful payment
       // create order and save in database for admin to process
       createOrder(payload, user.token).then((res) => {
         if (res.data.ok) {

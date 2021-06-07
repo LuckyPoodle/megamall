@@ -78,7 +78,7 @@ const ProductUpdate = ({ match ,history}) => {
     e.preventDefault();
     
     setValues({ ...values, subs: [] });
-    //we set the new category here first instead of adjusting values first, so we can compare with original value
+    // set the new category here first instead of adjusting values first, so can compare with original value
     setSelectedCategory(e.target.value)
 
 

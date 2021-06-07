@@ -38,7 +38,7 @@ const CreateCouponPage = () => {
       .then((res) => {
        
         setLoading(false);
-        loadAllCoupons(); // load all coupons
+        loadAllCoupons(); 
         setName("");
         setDiscount("");
         setExpiry("");
@@ -58,7 +58,7 @@ const CreateCouponPage = () => {
       setLoading(true);
       removeCoupon(couponId, user.token)
         .then((res) => {
-          loadAllCoupons(); // load all coupons
+          loadAllCoupons(); 
           setLoading(false);
          // toast.error(`Coupon "${res.data.name}" deleted`);
         })

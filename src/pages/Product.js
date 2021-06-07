@@ -36,7 +36,7 @@ const Product = ({ match }) => {
       let existingRatingObject = product.ratings.find(
         (ele) => ele.postedBy.toString() === user._id.toString()
       );
-      //if have existing rating by the user, then show the rating given by th euser
+      //if have existing rating by the user, then will show the rating given by the euser
       existingRatingObject && setStar(existingRatingObject.star);
     }
   },[clickonleaverating])
@@ -50,7 +50,7 @@ const Product = ({ match }) => {
     productStar(name,newRating,user.token)
     .then(res=>{
       
-//loadSingleProduct(); //if want to show updated rating in real-time
+//loadSingleProduct(); //show updated rating in real-time
       setUpdate(!update)
     })
 

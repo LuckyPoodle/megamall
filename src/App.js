@@ -50,10 +50,10 @@ const App = () => {
 
   const dispatch = useDispatch();
   
-  //when this component mount, we want to access auth state to check auth state
+
   useEffect(() => {
 
-    //this is called unsubscribe because once we get the info we want, we want to clean up the state to prvent memory leak
+    //so once info retrieved,clean up the state to prvent memory leak
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
         const idTokenResult = await user.getIdTokenResult();

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AdminNav from "../../../components/nav/AdminNav";
-//import { toast } from "react-toastify";
+
 import { useSelector,useDispatch } from "react-redux";
 import {
   createCategory,
@@ -24,8 +24,6 @@ const CategoryCreate = () => {
   /// SEARCH FILTERING step1
   const [keyword,setKeyword]=useState("");
 
-
-
   const dispatch=useDispatch();
 
   useEffect(() => {
@@ -33,7 +31,7 @@ const CategoryCreate = () => {
     getCategories()
     .then((res) => {
      
-      //we are putting the categories we obtained from backend into redux store here
+      //putting the categories obtained from backend into redux store here
       dispatch({
         type: "FETCH_CATEGORIES",
         payload: {
@@ -67,7 +65,7 @@ const CategoryCreate = () => {
           },
         });
 
-       // toast.success(`"${res.data.name}" is created`);
+       
        alert('Created category')
       })
       .catch((err) => {
@@ -77,8 +75,7 @@ const CategoryCreate = () => {
       });
   };
   const handleRemove = async (slug) => {
-    // let answer = window.confirm("Delete?");
-    // console.log(answer, slug);
+   
     if (window.confirm("Delete?")) {
       setLoading(true);
       removeCategory(slug, user.token)
@@ -101,7 +98,7 @@ const CategoryCreate = () => {
 
 
       /// SEARCH FILTERING step4
-      //higher-order function
+      
     const searched=(keyword)=>(c)=>c.name.toLowerCase().includes(keyword)
 
 

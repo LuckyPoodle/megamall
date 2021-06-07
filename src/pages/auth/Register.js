@@ -8,7 +8,7 @@ const Register = ({history}) => {
 
     const [email, setEmail] = useState("");
     
-  //we want to redirect logged in user from this page
+  //redirect logged in user from this page
   //user as dependency as may take a few seconds for us to get user
   const {user} =useSelector((state)=>({...state}));
   useEffect(()=>{

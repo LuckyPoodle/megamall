@@ -63,7 +63,7 @@ const Login = ({history}) => {
       const { user } = result;
       const idTokenResult = await user.getIdTokenResult();
 
-      //send data to backend. once we got a res, we dispatch to redux store 
+      //send data to backend. once get back res, dispatch to redux store 
       createOrUpdateUser(idTokenResult.token)
       .then((res) => {
         dispatch({
@@ -76,7 +76,7 @@ const Login = ({history}) => {
             _id: res.data._id,
           },
         });
-        //redirect according to role after we got back res
+       
         roleBasedRedirect(res);
       })
       .catch();

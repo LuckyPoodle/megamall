@@ -54,7 +54,7 @@ const ProductCreate = () => {
 
   const loadCategories = () =>
     getCategories().then((c) => setValues({...values,categories:c.data}));
-//we get an array of categories
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,7 +67,7 @@ const ProductCreate = () => {
       })
       .catch((err) => {
     
-        //we received error sent via json 
+         
         if (err.response.status === 400) alert(err.response.data);
       });
   };
@@ -79,7 +79,7 @@ const ProductCreate = () => {
 
 
   const handleCategoryChange=async (e)=>{
- //like this below also can
+ 
     // e.preventDefault();
     // console.log("CLICKED CATEGORY", e.target.value);
     // setValues({ ...values, category: e.target.value });
@@ -94,7 +94,7 @@ const ProductCreate = () => {
 
     e.preventDefault();
    
-    //subs:[] because we want to remove previous values in subs when you choose another category
+    //remove previous values in subs when you choose another category
     setValues({ ...values, subs:[], category: e.target.value });
     getCategorySubs(e.target.value).then((res) => {
     
